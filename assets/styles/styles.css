@@ -1,0 +1,107 @@
+/* styles.css */
+
+/* General Body Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: white;
+    color: #212529;
+}
+
+/* Navbar Styles */
+.navbar-brand {
+    font-weight: bold;
+}
+.navbar{
+    width: 90%;
+    margin: 0 auto; /* Center the navbar */
+
+}
+
+/* Buttons Styling */
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+}
+
+.btn-success {
+    background-color: #28a745;
+    border: none;
+}
+
+/* Custom Spacing for Right Section */
+.col-md-4.text-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.nav-link {
+    color: #6a4b3f; /* Adjust color as per your design */
+    font-weight: 500;
+    margin-right: 50px;
+    position: relative;
+    display: inline-block;
+}
+
+
+
+.home-link {
+    background-color: #f3ebe6; /* Light circular background */
+    color: #6a4b3f;
+    border-radius: 50px; /* Creates a circular effect */
+    width: 20px;
+
+}
+
+.nav-link:hover {
+    background-color: #f3ebe6;
+    color: #6a4b3f;
+}
+
+.logo {
+    width: 415px; /* Adjust size of the logo */
+    height: 143px;
+    margin-right: 10px;
+}
+
+.logo-text {
+    font-family: 'Brush Script MT', cursive; /* Adjust font to match your design */
+    color: #6a4b3f;
+    font-size: 1.2rem;
+}
+
+.bi-cart {
+    font-size: 1.2rem;
+    color: #6a4b3f; /* Adjust icon color */
+    margin-left: 10px;
+}
+
+.container-fluid {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.bi-cart {
+    font-size: 1.5rem;
+    color: #000;
+    position: relative; /* Important for the badge positioning */
+}
+
+.badge {
+    font-size: 0.5rem;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #6a4b3f;
+    color: #fff;
+    border-radius: 50%;
+    transform: translate(-2%, -2%); /* Adjusts the position over the icon */
+}
+.bg-brown {
+    background-color: #6a4b3f;
+    color: #fff;
+}
