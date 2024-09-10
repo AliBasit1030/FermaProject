@@ -59,8 +59,13 @@
             font-weight: bold;
             color: #5a5a5a;
         }
-        .carousel-control-prev,
-        .carousel-control-next {
+        .ali-basit-carosals   .carousel-control-prev-icon,
+        .ali-basit-carosals  .carousel-control-next-icon {
+            background-color: transparent!important;
+        }
+
+        .ali-basit-carosals  .carousel-control-prev,
+        .ali-basit-carosals  .carousel-control-next {
             height: 40px;
             width: 40px;
             background-color: #000000 !important;
@@ -91,30 +96,30 @@
                 font-size: 28px; /* Reduce title size for small screens */
             }
         }
-        .carousel-inner .carousel-item.active,
-        .carousel-inner .carousel-item-start,
-        .carousel-inner .carousel-item-next,
-        .carousel-inner .carousel-item-prev {
+        .ali-basit-carosals   .carousel-inner .carousel-item.active,
+        .ali-basit-carosals   .carousel-inner .carousel-item-start,
+        .ali-basit-carosals .carousel-inner .carousel-item-next,
+        .ali-basit-carosals .carousel-inner .carousel-item-prev {
             display: flex;
         }
         @media (min-width: 768px) {
-            .carousel-inner .carousel-item-right.active,
-            .carousel-inner .carousel-item-next,
-            .carousel-item-next:not(.carousel-item-start) {
+            .ali-basit-carosals  .carousel-inner .carousel-item-right.active,
+            .ali-basit-carosals  .carousel-inner .carousel-item-next,
+            .ali-basit-carosals  .carousel-item-next:not(.carousel-item-start) {
                 transform: translateX(25%) !important;
             }
-            .carousel-inner .carousel-item-left.active,
-            .carousel-item-prev:not(.carousel-item-end),
-            .active.carousel-item-start,
-            .carousel-item-prev:not(.carousel-item-end) {
+            .ali-basit-carosals .carousel-inner .carousel-item-left.active,
+            .ali-basit-carosals .carousel-item-prev:not(.carousel-item-end),
+            .ali-basit-carosals .active.carousel-item-start,
+            .ali-basit-carosals .carousel-item-prev:not(.carousel-item-end) {
                 transform: translateX(-25%) !important;
             }
-            .carousel-item-next.carousel-item-start,
-            .active.carousel-item-end {
+            .ali-basit-carosals.carousel-item-next.carousel-item-start,
+            .ali-basit-carosals  .active.carousel-item-end {
                 transform: translateX(0) !important;
             }
-            .carousel-inner .carousel-item-prev,
-            .carousel-item-prev:not(.carousel-item-end) {
+            .ali-basit-carosals  .carousel-inner .carousel-item-prev,
+            .ali-basit-carosals  .carousel-item-prev:not(.carousel-item-end) {
                 transform: translateX(-25%) !important;
             }
         }
@@ -122,9 +127,9 @@
 </head>
 <body>
 <div class="containermaincarosal">
-    <div class="carousel-container">
+    <div class="carousel-container ali-basit-carosals">
         <!-- Top Row with Text on the Left and Buttons on the Right -->
-        <div class="top-row">
+        <div class="top-row ">
             <div class="testimonial-title">Testimonials</div>
             <div class="carousel-buttons">
                 <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
