@@ -1,5 +1,6 @@
 /* styles.css */
-
+@import url('https://fonts.googleapis.com/css2?family=Slabo+27px&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Slabo+27px&display=swap');
 /* General Body Styles */
 body {
     font-family: Arial, sans-serif;
@@ -38,39 +39,34 @@ body {
 
 
 .nav-link {
-    color: #6a4b3f; /* Adjust color as per your design */
+    color: #1E1E1E; /* Adjust color as per your design */
+    font-size: 16px;;
     font-weight: 500;
     margin-right: 50px;
     position: relative;
     display: inline-block;
+    font-family: "Slabo 27px", serif;
+
 }
 
 
 
 .home-link {
-    background-color: #f3ebe6; /* Light circular background */
-    color: #6a4b3f;
+    background-color: #F7F3F0; /* Light circular background */
+    color: #8B5E3C !important;
     border-radius: 50px; /* Creates a circular effect */
     width: 20px;
 
 }
 
-.nav-link:hover {
-    background-color: #f3ebe6;
-    color: #6a4b3f;
-}
+
 
 .logo {
-    width: 415px; /* Adjust size of the logo */
+    width: 380px; /* Adjust size of the logo */
     height: 143px;
     margin-right: 10px;
 }
 
-.logo-text {
-    font-family: 'Brush Script MT', cursive; /* Adjust font to match your design */
-    color: #6a4b3f;
-    font-size: 1.2rem;
-}
 
 .bi-cart {
     font-size: 1.2rem;
@@ -90,18 +86,54 @@ body {
 }
 
 .badge {
-    font-size: 0.5rem;
-    width: 18px;
-    height: 18px;
+    font-size: 10px;
+    width: 17px;
+    height: 17px;
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #6a4b3f;
+    background-color: #8B5E3C;
     color: #fff;
     border-radius: 50%;
     transform: translate(-2%, -2%); /* Adjusts the position over the icon */
 }
 .bg-brown {
-    background-color: #6a4b3f;
+    background-color: #8B5E3C;
     color: #fff;
 }
+
+@media (max-width: 1000px) {
+    .hide-below-1000 {
+        display: none !important;
+    }
+}
+@media (min-width: 1000px) and (max-width: 3000px) {
+    .dropdown{
+        display: none;
+    }
+  }
+
+  .dropdown-item{
+    color: #777777; /* Adjust color as per your design */
+    font-size: 16px;;
+    font-weight: 500;
+    margin-right: 50px;
+    position: relative;
+    display: inline-block;
+    font-family: "Open Sans", sans-serif;
+
+  }
+
+  .home-menu{
+    color: #91A366 !important;
+  }
+  .dropdown-menu{
+    border: none !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2) !important; /* X-offset, Y-offset, blur radius, color */
+
+  }.navicon {
+    color: #8B5E3C !important; /* Change to your desired color */
+    font-size: 30px;
+    background: #F1F1F1; padding: 3px; border-radius: 4px;
+  }
+  

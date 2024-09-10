@@ -10,27 +10,42 @@
     <link rel="stylesheet" href="assets/styles/styles.css">
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
+    
 </head>
 <body>
 
     <header class="header">
         <nav class="navbar navbar-expand-lg">
+            
             <div class="container-fluid">
+                 <div class="dropdown ms-3">
+                <button class="btn  " type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                    <i class="nav-icon bi bi-list navicon" ></i>
+
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                    <li><a class="dropdown-item home-menu" href="index.html">Home</a></li>
+                    <li><a class="dropdown-item" href="order.html">Order</a></li>
+                    <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
+                  <li><a class="dropdown-item" href="contact.html">Contact</a></li>  
+
+                </ul>
+            </div>
                 <!-- Left Links -->
                 <div class="d-flex align-items-center">
-                    <a class="nav-link home-link" href="#">Home</a>
-                    <a class="nav-link" href="#">Order</a>
-                    <a class="nav-link" href="#">FAQ</a>
+                    <a class="nav-link home-link hide-below-1000" href="index.html">Home</a>
+                    <a class="nav-link hide-below-1000" href="order.html">Order</a>
+                    <a class="nav-link hide-below-1000" href="faq.html">FAQ</a>
                 </div>
 
                 <!-- Center Logo -->
-                <div class=" text-center">
+                <div class="text-center d-none d-lg-block"> <!-- Hide logo below 1000px -->
                     <img src="assets/images/Logo.png" alt="Logo" class="logo">
                 </div>
 
                 <!-- Right Links -->
                 <div class="d-flex align-items-center">
-                    <a class="nav-link" href="#">Contact</a>
+                    <a class="nav-link hide-below-1000" href="contact.html">Contact</a>
                     <a class="nav-link position-relative" href="#">
                         <i class="bi bi-cart"></i>
                         <span class="badge bg-brown rounded-circle position-absolute top-0 start-100 translate-middle">0</span>
