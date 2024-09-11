@@ -19,3 +19,4 @@ loadComponent('navbar', 'assets/components/navbar.html');
 loadComponent('main-content', 'assets/components/main-content.html');
 loadComponent('footer', 'assets/components/footer.html'); 
 loadComponent('carousel', 'assets/components/headerCarousel.html');
+loadComponent('carouselsec', 'assets/components/CarosalComment.html');

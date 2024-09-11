@@ -52,7 +52,7 @@ body {
 
 
 .home-link {
-    background-color: #F7F3F0; /* Light circular background */
+    background-color: #F7F3F0 !important; /* Light circular background */
     color: #8B5E3C !important;
     border-radius: 50px; /* Creates a circular effect */
     width: 20px;
@@ -136,4 +136,26 @@ body {
     font-size: 30px;
     background: #F1F1F1; padding: 3px; border-radius: 4px;
   }
-  
+  .footer {
+    position: relative;
+    background-color: red ;
+    color: #6c757d;
+}
+
+.footer-grass {
+    height: 50px;
+    background: url('assets/images/grass.png') repeat-x bottom;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.footer a {
+    color: #6c757d;
+    transition: color 0.3s;
+}
+
+.footer a:hover {
+    color: #85a86c !important;
+}
