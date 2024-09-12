@@ -49,7 +49,12 @@
             transition: transform 0.3s;
             opacity: 0.6; /* Set opacity to reduce visibility */
         }
-
+        .social-icon-one {
+            width: 24px; /* Adjust the size as needed */
+            height: 24px;
+            margin-right: 20px;
+            transition: transform 0.3s;
+        }
         .social-icon:hover {
             transform: scale(1.1);
         }
@@ -82,23 +87,101 @@
             position: relative;
             z-index: 2; /* Ensure text stays on top of the grass */
         }
+        .form-container {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .subscribe-input {
+            border-radius: 30px;
+            border: 1px solid #c3c9ab;
+            padding: 10px 20px;
+            margin-bottom: 10px;
+        }
+        .subscribe-btn {
+            background-color: #8a9e6e;
+            color: white;
+            border-radius: 30px;
+            padding: 10px 0;
+            border: none;
+            width: 100%;
+        }
+        .checkbox-label {
+            font-size: 14px;
+            color: #6c757d;
+        }
+        .checkbox-label a {
+            color: #6c757d;
+            text-decoration: underline;
+        }
+        .text-content{
+            position: relative;
+            z-index: 2; /* Ensure text stays on top of the grass */
+            bottom: -50px;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 14px;
+            font-style: normal;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.685);
+        }
         @media (min-width: 1000px) and (max-width: 3000px) {
            .responsive-footer{
             display: none;
            }
      
     }
+    @media (min-width: 200px) and (max-width: 450px) {
+        .social-icon-one {
+            width: 20px; /* Adjust the size as needed */
+            height: 20px;
+            margin-right: 8px;
+            transition: transform 0.3s;
+        }  
+        .text-content{
+            position: relative;
+            z-index: 2; /* Ensure text stays on top of the grass */
+            bottom: -50px;
+            font-family: "Open Sans", sans-serif;
+            font-weight: 400;
+            font-size: 13px;
+            font-style: normal;
+            white-space: nowrap;
+            color: rgba(255, 255, 255, 0.685);
+        }
+    }
+        
         @media (max-width: 1000px) {
             .responsive-links-footer {
                 display: none;
             }
+            .subscribe-text{
+                margin-top: 50px;
+            }
+        }
+        .form-check-input:checked{
+            background-color: #85a86c;
+            border-color: #85a86c;
         }
     </style>
 </head>
 <body>
  <div class="responsive-footer">
-    <h5 class="text-muted-heading text-center">Subscribe to Our<br>
+    <h5 class="text-muted-heading text-center subscribe-text">Subscribe to Our<br>
         Newsletter</h5>
+        <div class="form-container">
+            <form class="d-flex flex-column gap-2">
+                <input type="email" class="form-control subscribe-input" placeholder="Your email address..." required>
+                <button type="submit" class="btn subscribe-btn">Subscribe</button>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="terms" required>
+                    <label class="form-check-label checkbox-label" for="terms">
+                        I accept the <a href="#">terms and conditions</a> and the <a href="#">privacy policy</a>.
+                    </label>
+                </div>
+            </form>
+        </div>
+        
  </div>
 
     <!-- Footer -->
@@ -139,11 +222,27 @@
                     </div>
                 </div>
             </div>
-            <hr>
             <div class="row">
                 <div class="col">
-                    <p class="text-muted-feed">Copyright 2024, All rights reserved.</p>
+                    <p class="text-muted-feed responsive-links-footer">Copyright 2024, All rights reserved.</p>
                 </div>
+            </div>
+            <div class="row mb-4 responsive-footer">
+                <div class="col-8 text-content ">
+                    <p>Copyright 2024, All rights reserved.</p>
+                </div>
+                <div class="col-4 text-content">
+                    <div class="d-flex">
+                        <a href="#" target="_blank"></a>
+                            <img src="assets/images/facebook-white.svg" alt="Facebook" class="social-icon-one">
+                        </a>
+                        <a href="#" target="_blank">
+                            <img src="assets/images/twitter-white.svg" alt="Twitter" class="social-icon-one">
+                        </a>
+                        <a href="#">
+                            <img src="assets/images/insta-white.svg" alt="Instagram" class="social-icon-one">
+                        </a>
+                    </div>                </div>
             </div>
         </div>
         <div class="footer-grass"></div>

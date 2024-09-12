@@ -1,0 +1,65 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+
+.milk-section {
+    background-color: #788e5b; /* Green background */
+    padding: 50px 0;
+}
+.milk-container {
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    padding-top: 3%;
+    padding-bottom: 10%;
+}
+.milk-image {
+    display: block;
+    margin: 0 auto; 
+    max-width: 100%; 
+    margin-top: -15%;
+}
+.milk-image-two {
+    display: block;
+    margin: 0 auto; 
+    max-width: 100%; 
+    margin-top: -20%;
+}
+@media (min-width: 200px) and (max-width: 425px) {
+    .milk-image {
+    display: none;
+    
+}
+}
+@media (min-width: 1100px) and (max-width: 1400px) {
+    .milk-image {
+        margin-top: -15%;
+    
+}
+}
+@media (min-width: 1000px) and (max-width: 1100px) {
+    .milk-image {
+        margin-top: -18%;
+    
+}
+}
+@media (min-width: 435px) and (max-width: 1000px) {
+    .milk-image {
+        margin-top: -20%;
+    
+}
+}
+@media (min-width: 425px) and (max-width: 3500px) {
+    .milk-image-two {
+    display: none;
+    
+}
+}
+
+.milk-text{
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-size: 26px;
+    font-style: normal;
+    white-space: nowrap;
+    color: white;
+}

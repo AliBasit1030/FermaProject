@@ -6,17 +6,135 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/styles.css">
-<script src="js/scripts.js"></script>
 
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Slabo+27px&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
+    .custom-accordion-container .accordion {
+  background-color: white;
+  color: #1E1E1E;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  transition: 0.4s;
+  position: relative;
+  font-family: "Old Standard TT", serif;
+font-size: 24px;
+font-weight: 700; 
+}
+
+.custom-accordion-container .active,
+.custom-accordion-container .accordion:hover {
+  background-color: white;
+  color: #91A366;
+  font-family: "Old Standard TT", serif;
+
+}
+
+.custom-accordion-container .accordion:after {
+  content: '\002B';
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 33px;
+  height: 33px;
+  background-color: #91A366;
+  border-radius: 50%;
+  font-size: 15px;
+}
+
+.custom-accordion-container .active:after {
+  content: "\2212";
+  background-color: #F1F4F5;
+  color: #91A366;
+}
+
+.custom-accordion-container .panel {
+  padding: 0 18px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.199) ;
+  font-family: "Open Sans", sans-serif;
+
+  
+}
+
+.custom-accordion-container .panel p {
+  margin-bottom: 0;
+  color: #777777; 
+}
+
+    </style>
 </head>
 <body>
     <div id="navbar"></div>
+    <div id="faq"></div>
+    <div id="faqs"></div>
+    
+    <div class="container custom-accordion-container">
+        <button class="accordion">1. What are the benefits of donkey milk?</button>
+        <div class="panel">
+            <p>Donkey milk is rich in vitamins and minerals, including vitamins A, B, C, and D. It’s known for its high levels of omega-3 fatty acids, which support heart health, as well as its skin-nourishing properties.</p>
+        </div>
 
-  
+        <button class="accordion">2. Is donkey milk safe for people with lactose intolerance?</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">3. How does donkey milk compare to cow’s milk?</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">4. Can I use donkey milk for skincare?</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">5. How should I store donkey milk?</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+
+        <button class="accordion">6. Is donkey milk pasteurized?</button>
+        <div class="panel">
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+    </div>
+
+    <div id="carouselsec"></div>
     <div id="footer"></div>
 
-
+    <script>
+        var acc = document.getElementsByClassName("accordion");
+        var i;
+        
+        for (i = 0; i < acc.length; i++) {
+          acc[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+              panel.style.maxHeight = null;
+            } else {
+              panel.style.maxHeight = panel.scrollHeight + "px";
+            } 
+          });
+        }
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scripts.js"></script> 
 </body>
 </html>

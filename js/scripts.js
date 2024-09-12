@@ -20,3 +20,7 @@ loadComponent('main-content', 'assets/components/main-content.html');
 loadComponent('footer', 'assets/components/footer.html'); 
 loadComponent('carousel', 'assets/components/headerCarousel.html');
 loadComponent('carouselsec', 'assets/components/CarosalComment.html');
+loadComponent('product-header', 'assets/components/ProductHeader.html');
+loadComponent('Product-features', 'assets/components/Products-features.html');
+loadComponent('faq', 'assets/components/faq-header.html');
+loadComponent('faqs', 'assets/components/faqs.html');

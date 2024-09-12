@@ -1,18 +1,98 @@
-<div class="container mt-5">
-    <div class="row">
-      <!-- Left Section -->
-      <div class="col-md-8">
-        <h1>Welcome to Our Website</h1>
-        <p>This is the home page content.</p>
-      </div>
-      <!-- Right Section with Image -->
-      <div class="col-md-4 text-center">
-        <img src="img/your-image.jpg" class="img-fluid" alt="Image">
-        <div class="mt-3">
-          <a href="contact.html" class="btn btn-primary">Contact</a>
-          <a href="#" class="btn btn-success">Cart</a>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Section</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/styles/styles.css">
+
+</head>
+<body>
+<style>
+  @media (min-width: 1000px) and (max-width: 3000px) {
+    .subscribe-btn{
+        display: none;
+    }
+  }
+
+</style>
+<div>
+    <div class="about-section">
+       <div class="container">
+        <div class="d-flex">
+          <img src="assets/images/green-vector.png" alt="Donkeys" style="margin-right: 10px">
+
+          <h2 class="about-title">About</h2>
         </div>
-      </div>
+      
+        <p class="about-text">
+            Our donkey milk is sourced from healthy, free-grazing donkeys raised on organic pastures. 
+            We ensure no additives or preservatives are introduced, delivering a product that's as pure 
+            and natural as nature intended."
+        </p>
+        <a href="#" class="read-more">Read More...</a>
+       </div>
     </div>
+    <div  class=" donkey-img-position">
+      <img src="assets/images/donkeys.png" alt="Donkeys" class="about-image">
+
+     </div>
+</div>
+<!-- second portion -->
+  <div class="container" style="padding-top: 50px">
+   <div class="d-flex">
+     <img src="assets/images/green-vector.png" alt="Donkeys" style="margin-right: 10px">
+
+     <h2 class="about-title" >Product<br> Overview</h2>
+   </div>
+ 
+   <p class="about-text">
+    "Our premium donkey milk is a natural, nutrient-rich elixir sourced from ethically raised donkeys. Renowned for its purity and packed with essential vitamins, minerals, and antioxidants, our milk supports skin health, boosts immunity, and promotes overall well-being. Freshly harvested and meticulously processed, it’s delivered to your doorstep, ensuring you receive all the benefits of this ancient, healthful beverage in its purest form." <br><br>
+
+    Feel free to adjust this based on your specific brand messaging or product focus.
+   </p>
+   <a href="#" class="read-more-two">Read More...</a>
   </div>
-  
+
+
+  <!-- third portion -->
+
+  <div class="width-container my-5">
+    <div class="row">
+        <!-- Image Section -->
+        <div class="col-lg-6 col-md-12">
+          <div class="image-container">
+            <button class="order-btn-overlap">Order Now</button>
+            <img src="assets/images/milk-bottles.png" alt="Milk Bottles" class="img-fluid">
+        </div>
+        </div>
+        <!-- Features Section -->
+        <div class="col-lg-6 col-md-12 feature-section">
+            <div class="feature-item">
+                <h5 class="benefits-headings">Boosts Immunity</h5>
+                <p class="benefits-sub">Strengthen your body's defenses with natural vitamins and antibodies.</p>
+            </div>
+            <div class="feature-item">
+                <h5 class="benefits-headings">Promotes Healthy Skin</h5>
+                <p class="benefits-sub">Hydrate and rejuvenate your skin with essential nutrients.</p>
+            </div>
+            <div class="feature-item">
+                <h5 class="benefits-headings">Supports Digestive Health</h5>
+                <p class="benefits-sub">Gentle on the stomach, ideal for those with lactose intolerance.</p>
+            </div>
+            <div >
+                <h5 class="benefits-headings">Nutrient-Rich Superfood</h5>
+                <p class="benefits-sub">Fuel your body with a unique blend of essential nutrients.</p>
+            </div>
+        </div>
+
+        
+    </div>
+    <button type="submit" class="btn subscribe-btn">Subscribe</button>
+
+</div>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
