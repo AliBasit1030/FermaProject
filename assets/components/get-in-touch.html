@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Form</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .contact-section {
+            background-color: #f4f6eb;
+            padding: 30px;
+            border-radius: 10px;
+            flex: 1;
+        }
+
+        .contact-section h2 {
+            font-family: "Old Standard TT", serif !important;
+            font-size: 36px !important;
+            font-weight: 700 !important;
+            color: #91A366 !important;
+            margin-top: 30px !important;
+        }
+
+        .form-control {
+            border-radius: 50px !important;
+            border: 1px solid #91A366 !important;
+            padding: 10px 15px;
+            box-shadow: none;
+            transition: border-color 0.3s ease;
+            outline: none;
+            background-color: #f4f6eb !important;
+            margin-top: 20px !important;
+            height: 53px !important;
+        }
+
+        .form-control-area {
+            border-radius: 20px !important;
+            border: 1px solid #91A366 !important;
+            padding: 10px 15px;
+            box-shadow: none;
+            transition: border-color 0.3s ease;
+            outline: none;
+            background-color: #f4f6eb !important;
+            width: 100% !important;
+        }
+
+        .form-control:focus {
+            border-color: #7d8a4a !important;
+        }
+
+        .btn-submit {
+            background-color: #7d8a4a !important;
+            color: white !important;
+            border-radius: 50px !important;
+            border: none;
+            padding: 10px 20px;
+            font-weight: bold !important;
+            transition: background-color 0.3s ease;
+            font-family: "Open Sans", sans-serif !important;
+            height: 53px !important;
+        }
+
+        .btn-submit:hover {
+            background-color: #7d8a4a;
+        }
+
+        .image-container {
+            flex: 1;
+            margin: 0;
+        }
+
+        .image-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px 0 0 10px;
+        }
+
+        .contact-section {
+            border-radius: 0 10px 10px 0;
+        }
+
+        .row.g-4 {
+            gap: 0;
+        }
+
+        @media (min-width: 200px) and (max-width: 1200px) {
+            .contact-section h2 {
+                font-family: "Old Standard TT", serif !important;
+                font-size: 20px !important;
+                font-weight: 700 !important;
+                color: #91A366 !important;
+                margin-top: 30px !important;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container my-5">
+        <div class="row g-0 d-flex">
+            <div class="col-md-12 d-flex flex-column flex-md-row">
+                <div class="image-container">
+                    <img src="assets/images/donkey.png" alt="Donkey" class="img-fluid">
+                </div>
+                <div class="contact-section">
+                    <h2>Get in Touch with Us!</h2>
+                    <form>
+                        <div class="mb-3">
+                            <input type="text" class="form-control" placeholder="Name" required minlength="3" maxlength="50" pattern="[A-Za-z\s]+" title="Name should be 3-50 characters long and contain only letters and spaces.">
+                        </div>
+                        <div class="mb-3">
+                            <input type="tel" class="form-control" placeholder="Phone" required pattern="(\+1\s\d{3}-\d{3}-\d{4}|\+1\s\(\d{3}\)\s\d{3}-\d{4})" title="Phone number should be in the format +1 XXX-XXX-XXXX or +1 (XXX) XXX-XXXX.">
+                        </div>
+                        <div class="mb-3">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="mb-3">
+                            <textarea class="form-control-area" placeholder="Message" rows="3" required minlength="10" title="Message should not be empty."></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-submit w-100">Submit</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
