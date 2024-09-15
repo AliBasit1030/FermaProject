@@ -188,7 +188,7 @@ body {
 }
 
 .read-more {
-    color: #a35e38; /* Brownish color for read more link */
+    color: #8b5e3c85; /* Brownish color for read more link */
     text-decoration: none;
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
@@ -219,6 +219,22 @@ body {
 
 
 @media (min-width: 200px) and (max-width: 1000px) {
+
+    .navbar{
+        width: 100%;
+        margin: 0 auto; /* Center the navbar */
+    
+    }
+    .nav-link {
+        color: #1E1E1E; /* Adjust color as per your design */
+        font-size: 16px;;
+        font-weight: 500;
+        margin-right: 10px;
+        position: relative;
+        display: inline-block;
+        font-family: "Slabo 27px", serif;
+    
+    }
     .donkey-img-position{
         position: none !important;
         margin-top: 0% !important; 
@@ -373,3 +389,46 @@ body {
         display: none !important;
     }
   }
+
+
+  .custom-location-modal .modal-content {
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: white !important;
+}
+
+.custom-location-modal .location-icon {
+    background-color: #b5c69b;
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.custom-location-modal .btn-confirm {
+    background-color: #91A366 !important;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+}
+
+.custom-location-modal .btn-confirm:hover {
+    background-color: #a5b58b;
+}
+
+.custom-location-modal .form-check-input:checked {
+    background-color: #b5c69b;
+    border-color: #b5c69b;
+}
+
+.custom-location-modal .form-check-label {
+    margin-left: 10px;
+    min-width: 100px;
+    display: inline-block;
+    text-align: left;
+}
+.dropdown-toggle::after{
+    display: none !important;
+}

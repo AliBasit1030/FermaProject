@@ -81,6 +81,10 @@
     height: 38px;
 
 }
+        .location-options{
+            border: 1px solid #D9D9D9 !important;
+            border-radius: 10px;
+        }
 .carousel-wrapper .carousel-inner {
     background-color: #f9f5ef; /* Light beige background */
 }
@@ -226,9 +230,10 @@
             .carousel-wrapper .carousel-caption-small {
                 display: none;
             }
-           
+         
             
         }
+
     </style>
 </head>
 <body class="m-0 p-0">
@@ -246,14 +251,14 @@
                             <h class="content-natural">100% Pure and Natural Donkey Milk</h>
                         </div>
                         <div class=" col-md-6 d-flex justify-content-md-end justify-content-center ">
-                            <a href="order.html" class="btn-oder hidden">Order Now</a>
+                            <a  class="btn-oder hidden" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order Now</a>
                         </div>
                     </div>
                 </div>
                 <!-- Responsive caption for smaller screens -->
                 <div class="carousel-caption-small">
                     <h class="content-natural">100% Pure and Natural Donkey Milk</h>
-                    <a href="order.html" class="order-small">Order Now</a>
+                    <a class="order-small" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order Now</a>
                 </div>
             </div>
             <!-- Slide 2 -->
@@ -265,14 +270,14 @@
                             <h class="content-natural">100% Pure and Natural Donkey Milk</h>
                         </div>
                         <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-center">
-                            <a href="order.html" class="btn-oder hidden">Order Now</a>
+                            <a  class="btn-oder hidden" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order Now</a>
                         </div>
                     </div>
                 </div>
                 <!-- Responsive caption for smaller screens -->
                 <div class="carousel-caption-small">
                     <h class="content-natural">100% Pure and Natural Donkey Milk</h>
-                    <a href="order.html" class="order-small ">Order Now</a>
+                    <a class="order-small" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order Now</a>
                 </div>
             </div>
             <!-- Slide 3 -->
@@ -284,14 +289,14 @@
                             <h class="content-natural">100% Pure and Natural Donkey Milk</h>
                         </div>
                         <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-center">
-                            <a href="order.html" class="btn-oder hidden">Order Now</a>
+                            <a  class="btn-oder hidden" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order Now</a>
                         </div>
                     </div>
                 </div>
                 <!-- Responsive caption for smaller screens -->
                 <div class="carousel-caption-small">
                     <h class="content-natural">100% Pure and Natural Donkey Milk</h>
-                    <a href="order.html" class="order-small">Order Now</a>
+                    <a class="order-small" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order Now</a>
                 </div>
             </div>
             <!-- Slide 4 -->
@@ -303,14 +308,14 @@
                             <h class="content-natural">100% Pure and Natural Donkey Milk</h>
                         </div>
                         <div class="col-12 col-md-6 d-flex justify-content-md-end justify-content-center">
-                            <a href="order.html" class="btn-oder hidden">Order Now</a>
+                            <a  class="btn-oder hidden" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order Now</a>
                         </div>
                     </div>
                 </div>
                 <!-- Responsive caption for smaller screens -->
                 <div class="carousel-caption-small">
                     <h class="content-natural">100% Pure and Natural Donkey Milk</h>
-                    <a href="order.html" class="order-small">Order Now</a>
+                    <a class="order-small" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order Now</a>
                 </div>
             </div>
         </div>
@@ -325,8 +330,47 @@
         </button>
     </div>
 </div>
-<!-- Carousel Wrapper End -->
 
+
+    <!-- Modal Structure with Parent Class -->
+    <div class="modal fade location-modal" id="locationModal" tabindex="-1" aria-labelledby="locationModalLabel" aria-hidden="true">
+
+
+        <div class="modal-dialog custom-location-modal">
+            <div class="modal-content">
+                <div class="mx-auto text-center">
+                    <img src="assets/images/pin-location.svg" alt="Location Pin">
+                </div>
+                <h5 class="modal-title mb-3 text-center">Select Your Location!</h5>
+                <form>
+                    <div class="location-options d-flex flex-column align-items-center justify-content-center">
+                        <div class="form-check mb-2 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="location" id="location1" checked>
+                            <label class="form-check-label" for="location1">Turburea</label>
+                        </div>
+                        <div class="form-check mb-2 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="location" id="location2">
+                            <label class="form-check-label" for="location2">Târgu Jiu</label>
+                        </div>
+                        <div class="form-check mb-4 d-flex align-items-center">
+                            <input class="form-check-input" type="radio" name="location" id="location3">
+                            <label class="form-check-label" for="location3">Craiova</label>
+                        </div>
+                    </div>
+                    <button type="button" class="location-modal-confirm mt-3 btn-confirm" id="confirmButton">Confirm</button>
+                </form>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+<!-- Carousel Wrapper End -->
+<script>
+    document.querySelector('.location-modal-confirm').addEventListener('click', function() {
+        window.location.href = 'product.html';
+    });
+</script>
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>

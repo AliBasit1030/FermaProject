@@ -4,10 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Order</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
 <script src="js/scripts.js"></script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+    .month-picker{
+        font-family: "Poppins", sans-serif;
+        font-weight: 500px !important;
+
+    }
        @media screen and (max-width: 700px) {
         .naturalDOnkeyMilk-P {
     padding-top: 30px !important;
@@ -43,7 +49,7 @@
 
         .back-btn {
             margin-top: 10px;
-            margin-bottom: 30px;
+            margin-bottom: 20px;
             padding: 10px 20px;
             border: none;
             border-radius: 20px;
@@ -207,9 +213,9 @@
     }
 
     .calendar {
-        padding: 20px;
+        padding: 20px 20px;
         max-width: 500px;
-        margin:0 auto;
+     
         display: flex;
         flex-direction: column;
         background: #ffffff;
@@ -218,12 +224,14 @@
     }
 
     .calendar-header {
-        display: flex;
+        display: flex;    margin: 0px 40px;
         justify-content: space-between;
         align-items: center;
         margin-bottom: 10px;
-        font-weight: bold;
-        font-size: 20px;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500px !important;
+        color: #2D2C30 !important;
+        font-size: 16px;
     }
 
     .calendar-header button {
@@ -257,7 +265,7 @@
     }
 
     .selected-date {
-        background-color: #718c67;
+        background-color: #91A366;
         color: white;
     }
 
@@ -278,14 +286,23 @@
     .confirm-btn:hover {
         background-color: #718c67;
     }
-
+.selectdayoftocollect{
+   font-family: "Old Standard TT", serif !important;
+    text-align: center;
+    font-size: 25px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #91A366;
+}
     .day-names {
+        padding-top: 20px;
         display: grid;
         grid-template-columns: repeat(7, 1fr);
         text-align: center;
-        margin-bottom: 5px;
-        font-weight: bold;
-        color: #777;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500px !important;
+        color: #2D2C30 !important;
+        font-size: 16px;
     }
     </style>
 </head>
@@ -332,10 +349,12 @@
                 <div class="modal-dialog modal-dialog-centered">
                     <div class="modal-content">
                         <div class="calendar" id="calendarSection">
+                            <p class="selectdayoftocollect"> Select days to collect milk</p>
                             <div class="calendar-header">
+                               
                                 <button id="prev-year" class="btn btn-sm btn-outline-secondary">&lt;</button>
                                 <div>
-                                    <span id="month-picker">Month</span> 
+                                    <span id="month-picker" class="month-picker">Month</span> 
                                     <span id="year">Year</span>
                                 </div>
                                 <button id="next-year" class="btn btn-sm btn-outline-secondary">&gt;</button>

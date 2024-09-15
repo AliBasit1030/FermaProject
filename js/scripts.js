@@ -7,7 +7,16 @@ function loadComponent(id, file) {
             return response.text();
         })
         .then(data => {
-            document.getElementById(id).innerHTML = data;
+            const container = document.getElementById(id);
+            container.innerHTML = data;
+
+            const scripts = container.querySelectorAll('script');
+            scripts.forEach(script => {
+                const newScript = document.createElement('script');
+                newScript.text = script.textContent;
+                document.body.appendChild(newScript); 
+                script.remove(); 
+            });
         })
         .catch(error => {
             console.error(error);
@@ -17,7 +26,7 @@ function loadComponent(id, file) {
 
 loadComponent('navbar', 'assets/components/navbar.html');
 loadComponent('main-content', 'assets/components/main-content.html');
-loadComponent('footer', 'assets/components/footer.html'); 
+loadComponent('footer', 'assets/components/footer.html');
 loadComponent('carousel', 'assets/components/headerCarousel.html');
 loadComponent('carouselsec', 'assets/components/CarosalComment.html');
 loadComponent('product-header', 'assets/components/ProductHeader.html');
@@ -30,4 +39,3 @@ loadComponent('contact-header', 'assets/components/ContactHeader.html');
 loadComponent('get-in-touch', 'assets/components/get-in-touch.html');
 loadComponent('checkout-header', 'assets/components/checkout-header.html');
 loadComponent('checkout-form', 'assets/components/checkout-form.html');
-
