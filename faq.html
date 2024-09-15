@@ -74,8 +74,48 @@ font-weight: 700;
 .custom-accordion-container .panel p {
   margin-bottom: 0;
   color: #777777; 
-}
+  padding-top: 5px !important;
+  padding-bottom: 20px !important;
 
+}
+@media (max-width: 768px) {
+  .custom-accordion-container .accordion {
+  background-color: white;
+  color: #1E1E1E;
+  cursor: pointer;
+  padding: 4px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.4s;
+  position: relative;
+  font-family: "Old Standard TT", serif;
+font-size: 14px !important;
+font-weight: 700; 
+}
+.custom-accordion-container .accordion:after {
+  content: '\002B';
+  color: #fff;
+  font-weight: bold;
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 15px;
+  height:   15px;
+  background-color: #91A366;
+  border-radius: 50%;
+  font-size: 7px;
+}
+.custom-accordion-container .panel p{
+  font-size: 13px;
+
+}
+}
     </style>
 </head>
 <body>
