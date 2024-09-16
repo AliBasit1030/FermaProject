@@ -237,7 +237,7 @@ body {
 
     .about-section {
         background-color: #f9f5ef; /* Light beige background */
-        padding: 40px 20px;
+        padding: 3px 5px;
         padding-bottom: 5% !important;
     
     }
@@ -425,3 +425,108 @@ body {
 .dropdown-toggle::after{
     display: none !important;
 }
+
+
+
+@media (min-width: 200px) and (max-width: 1000px) {
+   
+.width-container{
+    width: 93%;
+    margin: 0 auto;
+}
+    
+.order-btn-overlap {
+   display: none;
+}
+
+.benefits-headings{
+    font-family: "Old Standard TT", serif;
+    font-weight: 700;
+    font-size: 20px;
+    font-style: normal;
+    white-space: nowrap;
+    color: #91A366;
+}
+
+.benefits-sub{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    font-style: normal;
+    color: #777777;
+    margin-top: 20px;
+
+}
+}
+
+.subscribe-btn {
+    background-color: #8a9e6e;
+    color: white;
+    border-radius: 30px;
+    padding: 10px 0;
+    border: none;
+    width: 100%;
+}
+
+
+@media (min-width: 1000px) and (max-width: 3000px) {
+    .subscribe-btn{
+        display: none !important;
+    }
+  }
+
+
+  .custom-location-modal .modal-content {
+    border-radius: 20px;
+    padding: 20px;
+    text-align: center;
+    background-color: white !important;
+}
+
+.custom-location-modal .location-icon {
+    background-color: #b5c69b;
+    border-radius: 50%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.custom-location-modal .btn-confirm {
+    background-color: #91A366 !important;
+    color: white;
+    border-radius: 50px;
+    padding: 10px 20px;
+    border: none;
+    width: 100%;
+}
+
+.custom-location-modal .btn-confirm:hover {
+    background-color: #a5b58b;
+}
+
+.custom-location-modal .form-check-input:checked {
+    background-color: #b5c69b;
+    border-color: #b5c69b;
+}
+
+.custom-location-modal .form-check-label {
+    margin-left: 10px;
+    min-width: 100px;
+    display: inline-block;
+    text-align: left;
+}
+.dropdown-toggle::after{
+    display: none !important;
+}
+@media (min-width: 300px) and (max-width: 1000px) {
+    .width-container{
+        width: 100% !important;
+        margin: 0 auto;
+        overflow: hidden;
+    }
+    .feature-section{
+        padding-left: 5% !important;
+        padding-right: 5% !important;
+        padding-top: 10% !important;
+
+    }
+  }
