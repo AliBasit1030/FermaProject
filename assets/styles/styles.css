@@ -3,7 +3,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Slabo+27px&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Old+Standard+TT:ital,wght@0,400;0,700;1,400&display=swap');
 
-/* General Body Styles */
 body {
     font-family: Arial, sans-serif;
     background-color: white;
@@ -48,18 +47,12 @@ body {
     position: relative;
     display: inline-block;
     font-family: "Slabo 27px", serif;
+    font-size: 16px;;
 
 }
 
 
 
-.home-link {
-    background-color: #F7F3F0 !important; /* Light circular background */
-    color: #8B5E3C !important;
-    border-radius: 50px; /* Creates a circular effect */
-    width: 20px;
-
-}
 
 
 

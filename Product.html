@@ -363,7 +363,7 @@
                                 <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
                             </div>
                             <div class="calendar-days"></div>
-                            <button class="confirm-btn" id="confirm-btn">Confirm</button>
+                            <button class="confirm-btn" id="confirm-btn" disabled>Confirm</button>
                         </div>
                         <!-- Out of Stock Message -->
                         <div id="outOfStockMessage">
@@ -391,124 +391,135 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            initializeCalendar();
-        });
+      document.addEventListener('DOMContentLoaded', function () {
+    initializeCalendar();
+});
 
-        function initializeCalendar() {
-            const calendar = document.querySelector('.calendar');
-            const selectedDates = new Set();
-            const maxSelectableDates = 5;
+function initializeCalendar() {
+    const calendar = document.querySelector('.calendar');
+    const selectedDates = new Set();
+    const maxSelectableDates = 5;
+    const confirmBtn = document.getElementById('confirm-btn');
 
-            function showOutOfStockMessage() {
-                document.getElementById('calendarSection').style.display = 'none';
-                document.getElementById('outOfStockMessage').style.display = 'block';
-            }
+    function updateConfirmButtonState() {
+        // Enable the confirm button only if at least one date is selected
+        confirmBtn.disabled = selectedDates.size === 0;
+    }
 
-            function showCalendar() {
-                document.getElementById('calendarSection').style.display = 'block';
-                document.getElementById('outOfStockMessage').style.display = 'none';
-            }
+    function showOutOfStockMessage() {
+        document.getElementById('calendarSection').style.display = 'none';
+        document.getElementById('outOfStockMessage').style.display = 'block';
+    }
 
-            document.getElementById('backToCalendarBtn').addEventListener('click', showCalendar);
+    function showCalendar() {
+        document.getElementById('calendarSection').style.display = 'block';
+        document.getElementById('outOfStockMessage').style.display = 'none';
+    }
 
-            const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
+    document.getElementById('backToCalendarBtn').addEventListener('click', showCalendar);
 
-            const isLeapYear = (year) => {
-                return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
-            };
+    const month_names = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'];
 
-            const getFebDays = (year) => {
-                return isLeapYear(year) ? 29 : 28;
-            };
+    const isLeapYear = (year) => {
+        return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    };
 
-            const generateCalendar = (month, year) => {
-                const calendar_days = calendar.querySelector('.calendar-days');
-                const calendar_header_year = calendar.querySelector('#year');
+    const getFebDays = (year) => {
+        return isLeapYear(year) ? 29 : 28;
+    };
 
-                const days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+    const generateCalendar = (month, year) => {
+        const calendar_days = calendar.querySelector('.calendar-days');
+        const calendar_header_year = calendar.querySelector('#year');
 
-                calendar_days.innerHTML = '';
+        const days_of_month = [31, getFebDays(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
 
-                let currDate = new Date();
-                let today = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate());
+        calendar_days.innerHTML = '';
 
-                let curr_month = month_names[month];
-                document.getElementById('month-picker').innerHTML = curr_month;
-                calendar_header_year.innerHTML = year;
+        let currDate = new Date();
+        let today = new Date(currDate.getFullYear(), currDate.getMonth(), currDate.getDate());
 
-                let first_day = new Date(year, month, 1).getDay() - 1;
-                if (first_day < 0) first_day = 6;
+        let curr_month = month_names[month];
+        document.getElementById('month-picker').innerHTML = curr_month;
+        calendar_header_year.innerHTML = year;
 
-                for (let i = 0; i < first_day; i++) {
-                    const emptySpot = document.createElement('div');
-                    calendar_days.appendChild(emptySpot);
-                }
+        let first_day = new Date(year, month, 1).getDay() - 1;
+        if (first_day < 0) first_day = 6;
 
-                for (let i = 1; i <= days_of_month[month]; i++) {
-                    const day = document.createElement('div');
-                    day.classList.add('calendar-day-hover');
-                    day.textContent = i;
-
-                    const date = new Date(year, month, i);
-                    const dateKey = `${year}-${month + 1}-${i}`;
-
-                    if (date < today) {
-                        day.classList.add('disabled-date');
-                    } else {
-                        if (selectedDates.has(dateKey)) {
-                            day.classList.add('selected-date');
-                        }
-
-                        day.onclick = () => {
-                            if (selectedDates.has(dateKey)) {
-                                selectedDates.delete(dateKey);
-                                day.classList.remove('selected-date');
-                            } else {
-                                if (selectedDates.size < maxSelectableDates) {
-                                    selectedDates.add(dateKey);
-                                    day.classList.add('selected-date');
-                                } else {
-                                    showOutOfStockMessage();
-                                }
-                            }
-                        };
-                    }
-
-                    calendar_days.appendChild(day);
-                }
-            };
-
-            let currDate = new Date();
-            let curr_month = currDate.getMonth();
-            let curr_year = currDate.getFullYear();
-
-            generateCalendar(curr_month, curr_year);
-
-            document.querySelector('#prev-year').onclick = () => {
-                if (curr_month === 0) {
-                    curr_month = 11;
-                    curr_year--;
-                } else {
-                    curr_month--;
-                }
-                generateCalendar(curr_month, curr_year);
-            };
-
-            document.querySelector('#next-year').onclick = () => {
-                if (curr_month === 11) {
-                    curr_month = 0;
-                    curr_year++;
-                } else {
-                    curr_month++;
-                }
-                generateCalendar(curr_month, curr_year);
-            };
-
-            document.getElementById('confirm-btn').onclick = () => {
-                console.log('Selected Dates:', Array.from(selectedDates));
-            };
+        for (let i = 0; i < first_day; i++) {
+            const emptySpot = document.createElement('div');
+            calendar_days.appendChild(emptySpot);
         }
+
+        for (let i = 1; i <= days_of_month[month]; i++) {
+            const day = document.createElement('div');
+            day.classList.add('calendar-day-hover');
+            day.textContent = i;
+
+            const date = new Date(year, month, i);
+            const dateKey = `${year}-${month + 1}-${i}`;
+
+            if (date < today) {
+                day.classList.add('disabled-date');
+            } else {
+                if (selectedDates.has(dateKey)) {
+                    day.classList.add('selected-date');
+                }
+
+                day.onclick = () => {
+                    if (selectedDates.has(dateKey)) {
+                        selectedDates.delete(dateKey);
+                        day.classList.remove('selected-date');
+                    } else {
+                        if (selectedDates.size < maxSelectableDates) {
+                            selectedDates.add(dateKey);
+                            day.classList.add('selected-date');
+                        } else {
+                            showOutOfStockMessage();
+                        }
+                    }
+                    updateConfirmButtonState(); // Update button state after each click
+                };
+            }
+
+            calendar_days.appendChild(day);
+        }
+    };
+
+    let currDate = new Date();
+    let curr_month = currDate.getMonth();
+    let curr_year = currDate.getFullYear();
+
+    generateCalendar(curr_month, curr_year);
+
+    document.querySelector('#prev-year').onclick = () => {
+        if (curr_month === 0) {
+            curr_month = 11;
+            curr_year--;
+        } else {
+            curr_month--;
+        }
+        generateCalendar(curr_month, curr_year);
+    };
+
+    document.querySelector('#next-year').onclick = () => {
+        if (curr_month === 11) {
+            curr_month = 0;
+            curr_year++;
+        } else {
+            curr_month++;
+        }
+        generateCalendar(curr_month, curr_year);
+    };
+
+    confirmBtn.onclick = () => {
+        console.log('Selected Dates:', Array.from(selectedDates));
+        window.location.href = 'index.html'; // Replace with the correct URL to navigate to the home page
+    };
+
+    updateConfirmButtonState(); // Initial check to ensure the button is disabled on load
+}
+
     </script>
 
     

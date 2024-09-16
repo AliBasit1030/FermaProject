@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="assets/styles/styles.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css" rel="stylesheet">
     <style>
-        /* Add this CSS for the overlay effect */
         .overlay {
             display: none;
             position: fixed;
@@ -20,11 +19,21 @@
             background-color: #00000060;
             z-index: 10;
         }
-        .location-options{
+        .location-options {
             border: 1px solid #D9D9D9 !important;
             border-radius: 10px;
         }
+        /* Active link style */
+        .active-link {
+            background-color: #F7F3F0 !important; /* Light circular background */
+    color: #8B5E3C !important;
+    border-radius: 50px; /* Creates a circular effect */
+    width: 20px;
+    font-family: "Slabo 27px", serif;
+
+        }
     </style>
+    
 </head>
 <body>
     <div id="overlay" class="overlay"></div>
@@ -37,7 +46,7 @@
                         <i class="nav-icon bi bi-list navicon"></i>
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <li><a class="dropdown-item home-menu" href="/">Home</a></li>
+                        <li><a class="dropdown-item" href="/">Home</a></li>
                         <li><a class="dropdown-item order-link" href="#" data-bs-toggle="modal" data-bs-target="#locationModal">Order</a></li>
                         <li><a class="dropdown-item" href="faq.html">FAQ</a></li>
                         <li><a class="dropdown-item" href="contact.html">Contact</a></li>
@@ -101,26 +110,38 @@
     <script src="assets/scripts/script.js"></script>
 
     <script>
-        const overlay = document.getElementById('overlay');
-        const dropdownMenuButton = document.getElementById('dropdownMenuButton');
-        const dropdownMenu = document.querySelector('.dropdown-menu');
+    const overlay = document.getElementById('overlay');
+    const dropdownMenuButton = document.getElementById('dropdownMenuButton');
+    const dropdownMenu = document.querySelector('.dropdown-menu');
+    const navLinks = document.querySelectorAll('.nav-link, .dropdown-item');
 
-        // Show overlay when dropdown is shown
-        dropdownMenuButton.addEventListener('click', () => {
-            overlay.style.display = 'block';
-        });
+    dropdownMenuButton.addEventListener('click', () => {
+        overlay.style.display = 'block';
+    });
 
-        // Hide overlay when dropdown is hidden
-        document.addEventListener('click', function(event) {
-            if (!dropdownMenu.contains(event.target) && !dropdownMenuButton.contains(event.target)) {
-                overlay.style.display = 'none';
-            }
-        });
+    document.addEventListener('click', function(event) {
+        if (!dropdownMenu.contains(event.target) && !dropdownMenuButton.contains(event.target)) {
+            overlay.style.display = 'none';
+        }
+    });
 
-        // Redirect on location confirmation
-        document.querySelector('.location-modal-confirm').addEventListener('click', function() {
-            window.location.href = 'product.html';
-        });
-    </script>
+    document.querySelector('.location-modal-confirm').addEventListener('click', function() {
+        window.location.href = 'product.html';
+    });
+
+    
+navLinks.forEach(link => {
+    if (link.href === window.location.href && !link.href.includes('order.html')) {
+        link.classList.add('active-link');
+    }
+
+    if (window.location.href.includes('product.html') && link.classList.contains('order-link')) {
+        link.classList.add('active-link');
+    }
+});
+
+
+</script>
+
 </body>
 </html>
